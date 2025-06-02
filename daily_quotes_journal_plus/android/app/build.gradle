@@ -1,0 +1,44 @@
+buildscript {
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"
+    }
+}
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+android {
+    namespace 'com.example.quotejournal'  // Ini harus sesuai dengan nama package Anda
+    compileSdkVersion 36  // Perbarui ke versi 36
+
+    defaultConfig {
+        applicationId 'com.example.quotejournal'  // Nama aplikasi
+        minSdkVersion 21  // Tentukan versi minimum SDK
+        targetSdkVersion 36  // Perbarui target SDK ke versi 36
+        versionCode 1  // Tentukan versi aplikasi
+        versionName '1.0.0'  // Nama versi aplikasi
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug  // Pengaturan signing config
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    // Tambahkan ini agar Java dan Kotlin sama-sama pakai Java 17
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+flutter {
+    source = '../..'  // Pastikan path menuju direktori Flutter sudah benar
+}
