@@ -1,11 +1,11 @@
-# Daily Quotes & Journal Plus
+# QuoteJournal
 
-Aplikasi Flutter untuk mendapatkan kutipan inspiratif harian, menyimpan kutipan favorit, dan menulis jurnal harian lengkap dengan gambar.
+Aplikasi Flutter untuk mendapatkan quote inspiratif , menyimpan quote favorit, dan menulis jurnal harian lengkap dengan gambar.
 
 ## Fitur
 
-- **Quotes**: Dapatkan kutipan acak berdasarkan kategori, simpan ke favorit.
-- **Favorites**: Lihat dan kelola daftar kutipan favorit Anda.
+- **Quotes**: Dapatkan quote acak berdasarkan kategori, simpan ke favorit.
+- **Favorites**: Lihat dan kelola daftar quote favorit Anda.
 - **Journal**: Tulis, edit, dan hapus entri jurnal harian, bisa menambahkan gambar.
 - **Settings**: Ubah tema (dark/light), atur ukuran font, dan logout.
 - **Authentication**: Login dan registrasi sederhana berbasis `SharedPreferences`.
@@ -55,15 +55,15 @@ assets/
 
 ## Cara Penggunaan
 
-- **Quotes**: Pilih kategori, tekan "New Quote" untuk mendapatkan kutipan baru, tekan "Add to Favorites" untuk menyimpan.
-- **Favorites**: Lihat daftar kutipan favorit, hapus jika tidak diinginkan.
+- **Quotes**: Pilih kategori, tekan "New Quote" untuk mendapatkan quote baru, tekan "Add to Favorites" untuk menyimpan.
+- **Favorites**: Lihat daftar quote favorit, hapus jika tidak diinginkan.
 - **Journal**: Tambah entri baru, edit, hapus, dan tambahkan gambar dari kamera/galeri.
 - **Settings**: Ubah tema, ukuran font, dan logout.
 
 ## Catatan
 
 - Data user, jurnal, dan favorit disimpan secara lokal (offline).
-- Kutipan diambil dari API [Quotable](https://api.quotable.io/).
+- quote diambil dari API [Quotable](https://api.quotable.io/).
 
 ## Lisensi
 
