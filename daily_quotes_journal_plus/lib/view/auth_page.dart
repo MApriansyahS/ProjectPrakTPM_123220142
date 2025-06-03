@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import '../network/auth_helper.dart';
 
+// Kelas AuthPage adalah tampilan (halaman) untuk proses login dan registrasi pengguna aplikasi.
+// Pengguna dapat memasukkan username dan password untuk masuk (login) atau membuat akun baru (register).
+//
+// Penjelasan bagian utama:
+// - Form input: Terdiri dari kolom username dan password, lengkap dengan validasi agar tidak kosong.
+// - Tombol Login/Register: Menyesuaikan mode, akan memproses login atau registrasi sesuai pilihan pengguna.
+// - Pesan error/sukses: Menampilkan pesan jika login gagal atau registrasi berhasil.
+// - Tombol ganti mode: Memungkinkan pengguna berpindah antara mode login dan registrasi.
+//
+// Proses autentikasi dilakukan secara lokal menggunakan AuthHelper, sehingga data login disimpan di perangkat.
+
 class AuthPage extends StatefulWidget {
   final VoidCallback onLoginSuccess;
   const AuthPage({Key? key, required this.onLoginSuccess}) : super(key: key);
@@ -34,7 +45,7 @@ class _AuthPageState extends State<AuthPage> {
         success = await _authHelper.register(_username, _password);
         if (success) {
           setState(() {
-            _isLogin = true; // Kembali ke mode login
+            _isLogin = true; 
             _error = 'Registrasi berhasil, silakan login.';
           });
         }

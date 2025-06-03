@@ -3,6 +3,24 @@ import 'package:path/path.dart';
 import '../model/quote.dart';
 import '../model/journal_entry.dart';
 
+// Kelas DBHelper digunakan untuk mengelola penyimpanan data lokal aplikasi menggunakan database SQLite.
+// Database ini menyimpan dua jenis data utama:
+// 1. Tabel favorites: Menyimpan kutipan (quote) favorit pengguna.
+// 2. Tabel journal: Menyimpan catatan harian (journal entry) pengguna.
+//
+// Penjelasan fungsi-fungsi utama:
+// - insertFavorite(Quote quote): Menyimpan kutipan ke daftar favorit.
+// - getFavorites(): Mengambil semua kutipan favorit yang sudah disimpan.
+// - deleteFavorite(String text): Menghapus kutipan favorit berdasarkan isi kutipan.
+//
+// - insertJournalEntry(JournalEntry entry): Menyimpan catatan harian baru.
+// - getJournalEntries(): Mengambil semua catatan harian yang sudah disimpan, urut dari terbaru.
+// - updateJournalEntry(JournalEntry entry): Memperbarui catatan harian yang sudah ada.
+// - deleteJournalEntry(int id): Menghapus catatan harian berdasarkan ID.
+//
+// Kode ini sangat penting agar data favorit dan catatan harian tetap tersimpan di perangkat pengguna, 
+// meskipun aplikasi ditutup atau perangkat dimatikan.
+
 class DBHelper {
   static final DBHelper _instance = DBHelper._internal();
   factory DBHelper() => _instance;

@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import '../model/quote.dart';
 import '../presenter/favorites_presenter.dart';
 
+// Kelas FavoritesPage adalah tampilan (halaman) yang menampilkan daftar kutipan favorit pengguna.
+// Setiap kutipan favorit ditampilkan dalam bentuk kartu (Card) yang berisi teks kutipan dan nama penulis.
+//
+// Penjelasan bagian utama:
+// - Daftar kutipan favorit diambil dari database lokal melalui FavoritesPresenter.
+// - Jika daftar masih dimuat (loading), akan muncul indikator loading (lingkaran berputar).
+// - Jika belum ada kutipan favorit, akan muncul pesan "No favorite quotes yet".
+// - Setiap item memiliki tombol hapus (ikon tempat sampah merah) untuk menghapus kutipan dari daftar favorit.
+// - Setelah menghapus, daftar akan diperbarui dan muncul notifikasi singkat di bawah layar.
+
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({Key? key}) : super(key: key);
 

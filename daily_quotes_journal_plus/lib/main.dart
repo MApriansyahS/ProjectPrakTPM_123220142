@@ -8,8 +8,20 @@ import 'view/settings_page.dart';
 import 'view/auth_page.dart';
 import 'network/auth_helper.dart';
 
+// File main.dart adalah titik awal (entry point) aplikasi Flutter ini.
+// Di sini diatur logika utama aplikasi, mulai dari proses login, pengaturan tema (gelap/terang), ukuran font, hingga navigasi antar halaman.
+//
+// Penjelasan bagian utama:
+// - Mengecek status login: Jika pengguna belum login, akan diarahkan ke halaman AuthPage (login/registrasi).
+// - Setelah login, pengguna dapat mengakses 4 fitur utama melalui BottomNavigationBar:
+//   1. QuotesPage: Melihat dan mencari kutipan inspiratif.
+//   2. FavoritesPage: Melihat daftar kutipan favorit yang sudah disimpan.
+//   3. JournalPage: Membaca, menambah, dan mengelola catatan harian (jurnal). 
+//   4. SettingsPage: Mengatur tema aplikasi (gelap/terang), ukuran font, dan logout.
+// - Pengaturan tema dan ukuran font diambil dari PreferencesHelper dan langsung diterapkan ke seluruh aplikasi.
+// - Terdapat juga menu drawer samping yang menyediakan tombol logout.
+
 void main() {
-  // Menonaktifkan SSL verification (hanya untuk pengujian)
   HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
@@ -165,7 +177,7 @@ class _MyAppState extends State<MyApp> {
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
               backgroundColor: Colors.black,
               selectedItemColor: const Color(0xFF8BC34A),
-              unselectedItemColor: const Color(0xFFB0BEC5), // <-- ganti dari Colors.white ke abu-abu terang
+              unselectedItemColor: const Color(0xFFB0BEC5), 
             ),
             floatingActionButtonTheme: const FloatingActionButtonThemeData(
               backgroundColor: Color(0xFF8BC34A),
@@ -185,7 +197,7 @@ class _MyAppState extends State<MyApp> {
         fontSize: _fontSize,
         onDarkModeChanged: _updateDarkMode,
         onFontSizeChanged: _updateFontSize,
-        onLogout: _logout, // Pastikan ada fungsi logout di sini
+        onLogout: _logout, 
       ),
     ];
 
@@ -225,3 +237,5 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+

@@ -3,6 +3,18 @@ import '../model/quote.dart';
 import '../presenter/quote_presenter.dart';
 import '../presenter/favorites_presenter.dart';
 
+// Kelas QuotesPage adalah tampilan utama untuk fitur kutipan (quotes) di aplikasi.
+// Pengguna dapat memilih kategori kutipan, melihat kutipan inspiratif, dan menambahkannya ke daftar favorit.
+//
+// Penjelasan bagian utama:
+// - Dropdown kategori: Pengguna dapat memilih kategori kutipan (misal: Business, Life, Success, dll).
+// - Saat kategori dipilih, aplikasi akan mengambil kutipan baru dari internet sesuai kategori tersebut.
+// - Jika data masih dimuat, akan muncul indikator loading (lingkaran berputar).
+// - Jika terjadi error saat mengambil kutipan, akan muncul pesan error berwarna merah.
+// - Jika kutipan berhasil diambil, akan ditampilkan teks kutipan dan nama penulisnya dengan tampilan menarik.
+// - Tombol "Add to Favorites": Untuk menyimpan kutipan ke daftar favorit pengguna.
+// - Tombol "New Quote": Untuk mengambil kutipan baru dari kategori yang sama.
+
 class QuotesPage extends StatefulWidget {
   final double fontSize;
   const QuotesPage({Key? key, this.fontSize = 16.0}) : super(key: key);
@@ -19,7 +31,6 @@ class _QuotesPageState extends State<QuotesPage> {
   bool _loading = false;
   String? _error;
 
-  // List kategori dengan quoteCount lebih dari 10
   final List<String> categories = [
     'Business', 'Change', 'Competition', 'Famous Quotes', 'Friendship', 
     'Future', 'Happiness', 'Life', 'Motivational', 'Success', 'Technology', 
@@ -66,7 +77,6 @@ class _QuotesPageState extends State<QuotesPage> {
     }
   }
 
-  // Map category ke tag (slug)
   final Map<String, String> categoryToTag = {
     'Business': 'business',
     'Change': 'change',

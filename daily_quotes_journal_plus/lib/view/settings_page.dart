@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
+// Kelas SettingsPage adalah tampilan (halaman) untuk mengatur preferensi aplikasi sesuai keinginan pengguna.
+// Pengguna dapat mengubah tema aplikasi (mode gelap/terang), mengatur ukuran huruf, dan melakukan logout.
+//
+// Penjelasan bagian utama:
+// - Switch "Dark Mode": Untuk mengaktifkan atau menonaktifkan mode gelap pada aplikasi.
+// - Slider "Font Size": Untuk mengatur besar kecilnya tulisan di seluruh aplikasi sesuai kebutuhan pengguna.
+// - Tombol "Logout": Untuk keluar dari akun dan kembali ke halaman login.
+//
+// Semua perubahan pengaturan akan langsung diterapkan dan disimpan, sehingga pengalaman pengguna tetap konsisten.
+
 class SettingsPage extends StatelessWidget {
   final bool isDarkMode;
   final double fontSize;
   final ValueChanged<bool> onDarkModeChanged;
   final ValueChanged<double> onFontSizeChanged;
-  final VoidCallback onLogout; // Tambahkan ini
+  final VoidCallback onLogout; 
 
   const SettingsPage({
     Key? key,
@@ -13,7 +23,7 @@ class SettingsPage extends StatelessWidget {
     required this.fontSize,
     required this.onDarkModeChanged,
     required this.onFontSizeChanged,
-    required this.onLogout, // Tambahkan ini
+    required this.onLogout, 
   }) : super(key: key);
 
   @override

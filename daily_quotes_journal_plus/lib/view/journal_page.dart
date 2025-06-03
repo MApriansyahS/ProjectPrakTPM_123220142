@@ -6,6 +6,22 @@ import '../model/journal_entry.dart';
 import '../presenter/journal_presenter.dart';
 import 'package:intl/intl.dart'; // untuk format tanggal
 
+// Kelas JournalPage adalah tampilan utama untuk fitur catatan harian (jurnal) di aplikasi.
+// Pengguna dapat melihat daftar catatan harian, menambah, mengedit, dan menghapus catatan sesuai kebutuhan.
+//
+// Penjelasan bagian utama:
+// - Daftar catatan harian diambil dari database lokal melalui JournalPresenter.
+// - Jika data masih dimuat, akan muncul indikator loading (lingkaran berputar).
+// - Jika belum ada catatan, akan muncul pesan "No journal entries yet".
+// - Setiap catatan ditampilkan dalam bentuk kartu (Card) yang berisi judul, tanggal, dan gambar (jika ada).
+// - Pengguna dapat menghapus catatan dengan menekan ikon tempat sampah merah pada setiap item.
+// - Tombol tambah (ikon +) di kanan bawah digunakan untuk menambah catatan baru.
+//
+// Formulir tambah/edit catatan (JournalFormPage):
+// - Pengguna dapat mengisi judul, isi catatan, dan menambahkan gambar dari kamera atau galeri.
+// - Validasi memastikan judul dan isi catatan tidak boleh kosong.
+// - Setelah disimpan, catatan baru akan muncul di daftar.
+
 class JournalPage extends StatefulWidget {
   const JournalPage({Key? key}) : super(key: key);
 

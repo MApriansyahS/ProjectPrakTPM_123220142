@@ -1,5 +1,26 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Kelas AuthHelper digunakan untuk mengelola proses autentikasi sederhana pada aplikasi.
+// Data login (username dan password) disimpan secara lokal menggunakan SharedPreferences.
+// SharedPreferences adalah tempat penyimpanan data sederhana di perangkat pengguna.
+
+// Penjelasan fungsi-fungsi utama:
+// - register(username, password):
+//   Menyimpan username dan password baru ke perangkat, serta menandai pengguna sebagai sudah login.
+//
+// - login(username, password):
+//   Memeriksa apakah username dan password yang dimasukkan cocok dengan data yang tersimpan.
+//   Jika cocok, pengguna dianggap berhasil login.
+//
+// - logout():
+//   Mengubah status login menjadi false (keluar dari aplikasi).
+//
+// - isLoggedIn():
+//   Mengecek apakah pengguna saat ini sudah login atau belum.
+//
+// - getCurrentUsername():
+//   Mengambil username pengguna yang sedang aktif (jika ada).
+
 class AuthHelper {
   static const String _keyUsername = 'username';
   static const String _keyPassword = 'password';
@@ -41,3 +62,4 @@ class AuthHelper {
     return prefs.getString(_keyUsername);
   }
 }
+
